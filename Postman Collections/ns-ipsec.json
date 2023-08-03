@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "3fff8fc8-3b6c-4684-8376-bfb18dcef7be",
+		"name": "Netskope",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get IPSec Tunnels",
+			"_postman_id": "6cf8166a-a381-4853-a6e1-f6cb177a9862",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Netskope-API-Token",
+						"value": "{{ns_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https:///{{tenant}}/api/v2/steering/ipsec/tunnels"
+			},
+			"response": []
+		},
+		{
+			"name": "Get IPSec PoPs",
+			"_postman_id": "afc8d162-90ce-42d9-8427-21043c2ceef1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Netskope-API-Token",
+						"value": "{{ns_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "https:///{{tenant}}/api/v2/steering/ipsec/pops"
+			},
+			"response": []
+		},
+		{
+			"name": "Config IPSec Tunnel",
+			"_postman_id": "5926560e-de90-4331-8327-8fb6928b1e8b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Netskope-API-Token",
+						"value": "{{ns_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"encryption\": \"AES128-CBC\",\n    \"site\": \"FortiGate-home\",\n    \"psk\":\"netskope\",\n    \"bandwidth\": 250,\n    \"pops\": [\"MIL1\", \"MRS1\"],\n    \"vendor\": \"Default\",\n    \"template\": \"\",\n    \"sourcetype\": \"Mixed\",\n    \"notes\": \"FortiGate\",\n    \"srcidentity\": \"csalmin.ddns.net\",\n    \"enable\":true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{tenant}}/api/v2/steering/ipsec/tunnels"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete IPSec Tunnel",
+			"_postman_id": "be823068-4198-4bcc-9c7c-5c5097eb0207",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Netskope-API-Token",
+						"value": "{{ns_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{tenant}}/api/v2/steering/ipsec/tunnels/3979",
+					"protocol": "https",
+					"host": [
+						"{{tenant}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"steering",
+						"ipsec",
+						"tunnels",
+						"3979"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "518",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
