@@ -117,9 +117,9 @@
 					"script": {
 						"id": "a7cb555c-2f87-4f7b-ae1e-b0a6199d77cc",
 						"exec": [
-							"const responseJson = pm.response.json();",
-							"var dc_id = responseJson.data.createSite.id",
-							"postman.setEnvironmentVariable(\"dc_id\", dc_id);"
+							"//const responseJson = pm.response.json();",
+							"//var dc_id = responseJson.data.createSite.id",
+							"//postman.setEnvironmentVariable(\"dc_id\", dc_id);"
 						],
 						"type": "text/javascript"
 					}
